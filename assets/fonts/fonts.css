@@ -1,0 +1,22 @@
+/*========================================
+Fonts
+==========================================*/
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('Montserrat/MontserratAlternates-Light.otf');
+	src: url('Montserrat/MontserratAlternates-Medium.otf');
+	src: url('Montserrat/MontserratAlternates-Regular.otf');
+	src: url('Montserrat/MontserratAlternates-SemiBold.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DMSans';
+	src: url('DM-Sans/DMSans-Regular.ttf');
+	src: url('DM-Sans/DMSans-Medium.ttf');
+	src: url('DM-Sans/DMSans-Bold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
