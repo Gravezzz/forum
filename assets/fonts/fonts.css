@@ -3,20 +3,50 @@ Fonts
 ==========================================*/
 
 @font-face {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat Light';
 	src: url('Montserrat/MontserratAlternates-Light.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat Medium';
 	src: url('Montserrat/MontserratAlternates-Medium.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat Regular';
 	src: url('Montserrat/MontserratAlternates-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat SemiBold';
 	src: url('Montserrat/MontserratAlternates-SemiBold.otf');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'DMSans';
-	src: url('DM-Sans/DMSans-Regular.ttf');
-	src: url('DM-Sans/DMSans-Medium.ttf');
-	src: url('DM-Sans/DMSans-Bold.ttf');
+	font-family: 'DM-Sans Regular';
+	src: url('DM-Sans/DMSans-Regular.ttf') format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DM-Sans Medium';
+	src: url('DM-Sans/DMSans-Medium.ttf') format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DM-Sans Bold';
+	src: url('DM-Sans/DMSans-Bold.ttf') format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
