@@ -4,20 +4,20 @@
 
 Структура папок и файлов:
 
-	index.html ->
+	index.php -> главная страница форума
 
 
 	/assets
 		/css - стили
-			style.css -> основные стили
+			null.css -> обнуление стандартных стилей
+			style.css -> стили форума
 
 		/fonts - шрифты
 			/DM-Sans - шрифты семейства DM Sans
 			/Montserrat - шрифты семейства Montserrat
 			fonts.css -> подключение шрифтов
 
-		/img
-			logo.svg -> логотип
+		/img - изображения 
 
 		/js
 			script.js -> скрипты
