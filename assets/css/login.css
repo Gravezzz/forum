@@ -1,0 +1,169 @@
+
+/*========================================
+Login Style
+==========================================*/
+
+/*---------------------- Header -----------------------*/
+
+.header {
+	padding: 10px 20px;
+}
+
+.header span {
+	font-family: "DM-Sans Bold";
+	font-size: 30px;
+	line-height: 39px;
+	color: #FFFFFF;
+}
+
+@media (max-width: 300px)
+{
+	.header span {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.header__buttons {}
+
+.button {
+	padding: 10px 20px;
+	width: 120px;
+	height: 40px;
+	border-radius: 5px;
+	font-family: "Montserrat Light";
+	font-size: 18px;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.outline {
+	border: 1px solid #E4A174;
+	box-sizing: border-box;
+	color: #E4A174;
+}
+
+.full {
+	background: #E4A174;
+	color: #434343;
+	margin-right: 20px;
+}
+
+.outline:hover {
+	background-color: rgba(228, 161, 116, 0.2);
+}
+
+.full:hover {
+	background-color: rgba(228, 161, 116, 0.8);
+}
+
+/*---------------------- Workspace -----------------------*/
+
+.content__workspace {
+	width: 100%;
+	background-color: #434343;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*---------------------- Form -----------------------*/
+
+.form {
+	padding: 50px 50px;
+	border-radius: 5px;
+	background-color: rgba(228, 161, 116, 0.2);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*---------------------- Form Title -----------------------*/
+
+.form__title {
+	width: 100%;
+	height: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.form__title span {
+	font-family: "Montserrat Medium";
+	font-size: 46px;
+	line-height: 59px;
+	color: #FFFFFF;
+}
+
+.form__title hr {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #E4A174;
+}
+
+/*---------------------- Form Input -----------------------*/
+
+.form__input {
+	padding: 20px 0px;
+	width: 100%;
+	height: 70%;
+}
+
+.form__input form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.input {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 15px;
+}
+
+.input span {
+	font-family: "Montserrat Light";
+	font-size: 16px;
+	line-height: 24px;
+	color: #FFFFFF;
+	margin-bottom: 5px;
+}
+
+.input input {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #E4A174;
+	box-sizing: border-box;
+	background-color: transparent;
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: white;
+}
+
+/*---------------------- Input Button -----------------------*/
+
+.input__buttons {
+	align-self: flex-end;
+    margin-top: 15px;
+}
+.input__buttons .full {
+	margin: 0;
+	border: 1px solid #E4A174;
+	box-sizing: border-box;
+	background: #E4A174;
+	color: #434343;
+}
+
+.input__buttons .full:hover {
+	background-color: transparent;
+	color: #E4A174;
+}
