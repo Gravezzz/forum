@@ -4,6 +4,7 @@ Login Style
 ==========================================*/
 
 @import "button.css";
+@import "scrollbar.css";
 
 /*---------------------- Header -----------------------*/
 
@@ -36,7 +37,8 @@ Login Style
 	align-items: center;
 }
 
-.header__buttons .full {
+.header__buttons .full,
+.header__buttons .outline {
 	margin-right: 20px;
 }
 
@@ -53,6 +55,7 @@ Login Style
 /*---------------------- Form -----------------------*/
 
 .form {
+	max-height: 450px;
 	padding: 50px 50px;
 	border-radius: 5px;
 	background-color: rgba(228, 161, 116, 0.2);
@@ -93,10 +96,13 @@ Login Style
 .form__input {
 	padding: 20px 0px;
 	width: 100%;
-	height: calc(100% -100px);
+	height: calc(100% - 100px);
 }
 
 .form__input form {
+	padding-right: 5px;
+	height: 100%;
+    overflow-y: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

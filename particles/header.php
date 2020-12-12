@@ -1,3 +1,6 @@
+<?php
+include "configs/db.php";
+?>
 
 <div class="search">
 	<div class="icon first"><img src="assets/img/search.svg" alt="The search."></div>

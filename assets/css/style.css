@@ -4,6 +4,7 @@ Style
 
 @import "null.css";
 @import "../fonts/fonts.css";
+@import "scrollbar.css";
 
 * {
 	font-family: 'Montserrat Light';
@@ -665,28 +666,28 @@ textarea::placeholder {
 
 /*---------------------- Scrollbar -----------------------*/
 
-
+.content__text::-webkit-scrollbar-track,
 .content__products ul::-webkit-scrollbar-track,
 .workspace__comments ul::-webkit-scrollbar-track {
     background-color: transparent;
     padding-left: 5px;
 }
 
-
+.content__text::-webkit-scrollbar,
 .content__products ul::-webkit-scrollbar,
 .workspace__comments ul::-webkit-scrollbar {
     width: 2px;
     background-color: transparent;
 }
 
-
+.content__text::-webkit-scrollbar-thumb,
 .content__products ul::-webkit-scrollbar-thumb,
 .workspace__comments ul::-webkit-scrollbar-thumb {
 	background-color: #C4C4C4;
 	border-radius: 5px 5px 5px 5px;
 }
 
-
+.content__text::-webkit-scrollbar-button,
 .content__products ul::-webkit-scrollbar-button,
 .workspace__comments ul::-webkit-scrollbar-button {
     height: 5px;

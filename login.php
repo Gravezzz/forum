@@ -1,3 +1,7 @@
+<?php
+include "configs/db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,35 +38,21 @@
 						<header class="header">
 							<span>Forum</span>
 							<div class="header__buttons">
-								<div class="button"><a href="signup.php" class="full">Sign Up</a></div>
-								<div class="button"><a href="login.php" class="outline">Login</a></div>
+								<div class="button signup"><a href="#" id="signup" class="outline">Sign Up</a></div>
+								<div class="button login"><a href="#" id="login" class="full">Login</a></div>
 							</div>
 						</header>
 						<!-- Контент под шапкой -->
 						<div class="content">
 							<!-- Рабочая область -->
 							<div class="content__workspace">
-								<div class="form">
-									<div class="form__title">
-										<span>Log In</span>
-										<hr>
-									</div>
-									<div class="form__input">
-										<form action="#">
-											<div class="input">
-												<span>Username</span>
-												<input type="text" class="input__username">
-											</div>
-											<div class="input">
-												<span>Password</span>
-												<input type="password" class="input__password">
-											</div>
-											<div class="input__buttons">
-												<div class="button"><a class="full" type="submit">Login</a></div>
-											</div>
-										</form>
-									</div>
-								</div>
+								<?php
+									include "particles/login.php";
+								?>
+
+								<?php
+									include "particles/signup.php";
+								?>
 							</div>
 						</div>
 					</div>
@@ -70,6 +60,8 @@
 			</div>
 		</div>
 	</div>
+
+<script src="assets/js/script.js"></script>
 
 </body>
 

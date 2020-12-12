@@ -1,3 +1,6 @@
+<?php
+include "configs/db.php";
+?>
 
 <!-- Описание продукта -->
 <div class="workspace__product">

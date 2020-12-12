@@ -1,4 +1,6 @@
-
+<?php
+include "configs/db.php";
+?>
 
 <nav class="content__products">
 

@@ -1,3 +1,10 @@
+<?php
+include "configs/db.php";
+if (isset($_COOKIE["person_id"]) == FALSE) {
+	header("Location: /login.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,6 +50,8 @@
 		</div>
 		
 	</div>
+
+<script src="assets/js/script.js"></script>
 
 </body>
 

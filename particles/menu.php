@@ -1,4 +1,6 @@
-
+<?php
+include "configs/db.php";
+?>
 
 <!-- Логотип -->
 <a href="/">
