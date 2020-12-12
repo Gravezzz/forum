@@ -33,7 +33,7 @@
 				</div>
 			</li>
 		</a>
-		<a href="#">
+		<a href="create.php">
 			<li class="ul__link">
 				<div class="circle">
 					<div class="icon"><img src="assets/img/plus.svg" alt=""></div>
@@ -46,7 +46,7 @@
 <hr>
 
 <!-- Выход -->
-<a href="#">
+<a href="login.php">
 	<div class="menu__exit">
 		<div class="circle">
 			<div class="icon"><img src="assets/img/logout.svg" alt=""></div>

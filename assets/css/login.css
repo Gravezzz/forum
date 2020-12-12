@@ -3,6 +3,8 @@
 Login Style
 ==========================================*/
 
+@import "button.css";
+
 /*---------------------- Header -----------------------*/
 
 .header {
@@ -26,37 +28,16 @@ Login Style
 	}
 }
 
-.header__buttons {}
-
-.button {
-	padding: 10px 20px;
-	width: 120px;
-	height: 40px;
-	border-radius: 5px;
-	font-family: "Montserrat Light";
-	font-size: 18px;
-	line-height: 22px;
-	cursor: pointer;
+.header__buttons {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
 }
 
-.outline {
-	border: 1px solid #E4A174;
-	box-sizing: border-box;
-	color: #E4A174;
-}
-
-.full {
-	background: #E4A174;
-	color: #434343;
+.header__buttons .full {
 	margin-right: 20px;
-}
-
-.outline:hover {
-	background-color: rgba(228, 161, 116, 0.2);
-}
-
-.full:hover {
-	background-color: rgba(228, 161, 116, 0.8);
 }
 
 /*---------------------- Workspace -----------------------*/
@@ -85,21 +66,22 @@ Login Style
 
 .form__title {
 	width: 100%;
-	height: 30%;
+	height: 100px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 }
 
 .form__title span {
-	font-family: "Montserrat Medium";
+	font-family: "Montserrat Regular";
 	font-size: 46px;
 	line-height: 59px;
 	color: #FFFFFF;
 }
 
 .form__title hr {
+	margin-top: 20px;
 	display: block;
 	width: 100%;
 	height: 1px;
@@ -111,7 +93,7 @@ Login Style
 .form__input {
 	padding: 20px 0px;
 	width: 100%;
-	height: 70%;
+	height: calc(100% -100px);
 }
 
 .form__input form {
@@ -131,11 +113,15 @@ Login Style
 }
 
 .input span {
-	font-family: "Montserrat Light";
+	font-family: "DM-Sans Regular";
 	font-size: 16px;
 	line-height: 24px;
 	color: #FFFFFF;
 	margin-bottom: 5px;
+}
+
+.input span span {
+	color: tomato;
 }
 
 .input input {

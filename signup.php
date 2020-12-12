@@ -5,7 +5,7 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Login</title>
+	<title>Sign up</title>
 
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/login.css">
@@ -44,18 +44,30 @@
 							<div class="content__workspace">
 								<div class="form">
 									<div class="form__title">
-										<span>Log In</span>
+										<span>Sign Up</span>
 										<hr>
 									</div>
 									<div class="form__input">
 										<form action="#">
 											<div class="input">
-												<span>Username</span>
+												<span>Username<span>*</span></span>
 												<input type="text" class="input__username">
 											</div>
 											<div class="input">
-												<span>Password</span>
+												<span>Email<span>*</span></span>
+												<input type="email" class="input__email">
+											</div>
+											<div class="input">
+												<span>Fullname<span>*</span></span>
+												<input type="text" class="input__fullname">
+											</div>
+											<div class="input">
+												<span>Password<span>*</span></span>
 												<input type="password" class="input__password">
+											</div>
+											<div class="input">
+												<span>Repeat<span>*</span></span>
+												<input type="password" class="input__repeat">
 											</div>
 											<div class="input__buttons">
 												<div class="button"><a class="full" type="submit">Login</a></div>

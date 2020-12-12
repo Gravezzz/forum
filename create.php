@@ -5,9 +5,10 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Forum</title>
+	<title>Create</title>
 
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/create.css">
 
 </head>
 
@@ -34,14 +35,27 @@
 							<?php include "./particles/products.php"; ?>
 							<!-- Рабочая область -->
 							<div class="content__workspace">
-								<?php include "./particles/ws_person.php"; ?>
+								<div class="workspace__create">
+									<textarea placeholder="Create new try story."></textarea>
+								</div>
+								<div class="workspace__publish">
+									<div class="publish__file">
+										<a href="#">
+											<div class="icon"><img src="assets/img/clip.svg" alt=""></div>
+										</a>
+										<ul class="file__img"></ul>
+									</div>
+									<div class="publish__button">
+										<div class="button"><a class="full" type="submit">Publish</a></div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
 </body>
