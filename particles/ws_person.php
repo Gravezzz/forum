@@ -1,23 +1,33 @@
 <?php
 include "configs/db.php";
+
 ?>
 
 <!-- Описание продукта -->
-<div class="workspace__product">
+<?php 
+if (isset($_GET['topic_id'])) {
 
-	<div class="icon-300"><img src="assets/img/img_big.svg" alt=""></div>
+$sql_comments = "SELECT * FROM comments WHERE topic_id =" . $_GET['topic_id'];
+$comments_result = mysqli_query($connect, $sql_comments);
+$comments_number = mysqli_num_rows($comments_result);
+
+$sql = "SELECT * FROM topics WHERE id =" . $_GET['topic_id'];
+
+$result = mysqli_query($connect, $sql);
+
+$topic = mysqli_fetch_assoc($result);
+
+	?>
+<div class="workspace__product">
+	<?php echo "<div class=\"icon-300\"><img src='" . $topic['img'] . "' ></div>"; ?>
 
 	<div class="product__content">
 
 		<div class="content__text">
 			<span>
-				Описание, которое поможет увеличить продажи, должно быть таким: <br>
-				<br>
-				1. четко объясняет, для чего нужен ваш товар и как его использовать; <br>
-				2. подчеркивает преимущества товара; <br>
-				3. предоставляет всю информацию, необходимую для принятия решения о покупке — вес, размер, материалы и так далее; <br>
-				5. говорит на языке вашей целевой аудитории; <br>
-				6. содержит отзывы, ссылки на достоверные источники и разные виды контента, которые помогают подтвердить слова продавца.
+				<?php 
+				echo $topic['description'];
+				?>
 			</span>
 		</div>
 
@@ -28,73 +38,51 @@ include "configs/db.php";
 	</div>
 
 </div>
-
-<!-- Комментарии к продукту -->
 <div class="workspace__comments">
+<?php
+
+$i=0;
+while ($i < $comments_number) {
+$comments = mysqli_fetch_assoc($comments_result);
+$username_sql = "SELECT * FROM users WHERE id =" . $comments['person_id'];
+
+$username = mysqli_query($connect, $username_sql);
+
+$username = mysqli_fetch_assoc($username);
+
+?>
+<!-- Комментарии к продукту -->
+
 
 	<ul class="comments__list">
 		<li class="comment__item">
 			<div class="comment">
 				<div class="comment_person"><a href="#"><img src="assets/img/person_blue.svg" alt=""></a></div>
 				<div class="comment_text">
-					<span id="name">Iosif Isachko</span>
+					<span id="name">
+						<?php
+						echo $username['username'];
+						?>
+						</span>
 					<span id="com">
-						Добро и зло — антонимичные понятия и, таким образом, отрицают друг друга. В европейской традиции добро обычно ассоциируют со светом, светлым, белым.
+						<?php
+						echo $comments['comment'];
+						?>
 					</span>
 				</div>
 				<div class="comment_date">
-					<span id="time">19:00</span>
-					<span id="date">31.12.2020</span>
-				</div>
-			</div>
-		</li>
-		<li class="comment__item">
-			<div class="comment">
-				<div class="comment_person"><a href="#"><img src="assets/img/person_blue.svg" alt=""></a></div>
-				<div class="comment_text">
-					<span id="name">Iosif Isachko</span>
-					<span id="com">
-						Изначально было противоположно понятию худа (то есть означало результат действия блага, в противовес результату действия зла), а в более позднее время стало употребляться как антоним понятия зла, означая намеренное, бескорыстное и искреннее стремление к осуществлению блага, полезного деяния, например, помощи ближнему, а также незнакомому человеку или животному и растительному миру.
+					<span id="time"> 
+						<?php echo $comments['date']; ?>							
 					</span>
 				</div>
-				<div class="comment_date">
-					<span id="time">19:00</span>
-					<span id="date">31.12.2020</span>
-				</div>
 			</div>
 		</li>
-		<li class="comment__item">
-			<div class="comment">
-				<div class="comment_person"><a href="#"><img src="assets/img/person_blue.svg" alt=""></a></div>
-				<div class="comment_text">
-					<span id="name">Iosif Isachko</span>
-					<span id="com">
-						Изначально было противоположно понятию худа (то есть означало результат действия блага, в противовес результату действия зла), а в более позднее время стало употребляться как антоним понятия зла, означая намеренное, бескорыстное и искреннее стремление к осуществлению блага, полезного деяния, например, помощи ближнему, а также незнакомому человеку или животному и растительному миру.
-					</span>
-				</div>
-				<div class="comment_date">
-					<span id="time">19:00</span>
-					<span id="date">31.12.2020</span>
-				</div>
-			</div>
-		</li>
-		<li class="comment__item">
-			<div class="comment">
-				<div class="comment_person"><a href="#"><img src="assets/img/person_blue.svg" alt=""></a></div>
-				<div class="comment_text">
-					<span id="name">Iosif Isachko</span>
-					<span id="com">
-						Добро и зло — антонимичные понятия и, таким образом, отрицают друг друга. В европейской традиции добро обычно ассоциируют со светом, светлым, белым.
-					</span>
-				</div>
-				<div class="comment_date">
-					<span id="time">19:00</span>
-					<span id="date">31.12.2020</span>
-				</div>
-			</div>
-		</li>
-	</ul>
-	
+	</ul>	
+
+<?php
+$i++;
+}
+?>
 </div>
 
 <!-- Отправка комментария -->
@@ -113,3 +101,25 @@ include "configs/db.php";
 	</div>
 
 </div>
+
+<?php
+}else{
+?>
+
+<div class="workspace__product">
+
+	<div class="product__content">
+
+		<div class="content__text">
+			<span>
+				Выберите тему
+			</span>
+		</div>
+	</div>
+
+</div>
+<?php
+}	
+?>
+
+
