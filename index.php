@@ -14,6 +14,7 @@ if (isset($_COOKIE["person_id"]) == FALSE) {
 	<meta name="viewport" content="width=device-width">
 	<title>Forum</title>
 
+	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
 </head>

@@ -1,14 +1,9 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 
-$sql = "SELECT * FROM topics";
-
+$sql = "SELECT topics.* FROM topics ORDER BY (SELECT count(*) FROM comments WHERE comments.topic_id = topics.id) DESC";
 $result = mysqli_query($connect, $sql);
-
 $topics_num = mysqli_num_rows($result);
-
-
-
 
 ?>
 
@@ -19,18 +14,12 @@ $topics_num = mysqli_num_rows($result);
 		$count = 1;
 		while ($count <= $topics_num) {
 
-			$sql_img = "SELECT * FROM topics WHERE id =" . $count;
-
-			$result_img = mysqli_query($connect, $sql_img);
-
 			$topic = mysqli_fetch_assoc($result);
-
-			$topic_img = mysqli_fetch_assoc($result_img);
 
 			echo "<a href='?topic_id=" . $topic["id"] . "'>";
 				echo"<li class=\"products__item\">";
 
-				echo "<div class=\"icon\"><img src='" . $topic_img['img'] . "' ></div>";
+				echo "<div class=\"icon\"><img src='" . $topic['img'] . "' ></div>";
 
 				echo "<div class=\"item__content\">";
 
@@ -48,7 +37,7 @@ $topics_num = mysqli_num_rows($result);
 
 				echo "<span>" . $comments_num . "</span>";
 
-				$latest_comment = "SELECT * FROM comments WHERE topic_id =" . $topic['id'] ." ORDER BY ID LIMIT 1";
+				$latest_comment = "SELECT * FROM comments WHERE topic_id =" . $topic['id'] ." ORDER BY id DESC LIMIT 1";
 				$sql_comments_num_result = mysqli_query($connect, $latest_comment);
 				$lat_com = mysqli_fetch_assoc($sql_comments_num_result);
 

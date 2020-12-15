@@ -4,11 +4,8 @@ Style
 
 @import "null.css";
 @import "../fonts/fonts.css";
-@import "scrollbar.css";
+@import "./additi/scroll.css";
 
-* {
-	font-family: 'Montserrat Light';
-}
 
 .wrapper {
 	min-height: 100%;
@@ -130,7 +127,7 @@ Menu
 }
 
 /*========================================
-Mein
+Main
 ==========================================*/
 
 .main {
@@ -195,9 +192,8 @@ Mein
 	height: 40px;
 	background-color: #6B6B6B;
 	color: #FFD0B1;
-	font-family: 'Montserrat Light';
-	font-style: normal;
-	font-weight: normal;
+	font-family: 'Montserrat';
+	font-weight: 400;
 	font-size: 14px;
 }
 
@@ -287,19 +283,20 @@ Mein
 	background-color: #E4A174;
 }
 
-.products__item .icon img {
+.products__item > .icon img {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
+	border-radius: 5px 0px 0px 5px;
 }
 
 .item__content {
-	padding: 5px;
-	padding-right: 15px;
+	padding: 4px 15px 3px 5px; 
 	width: calc(100% - 60px);
 	height: 100%;
 }
 
-.item__content:hover {
+.products__item:hover .item__content {
 	transition: all 300ms;
 	background-color: grey;
 }
@@ -314,10 +311,11 @@ Mein
 }
 
 .item__title > span {
-	font-family: 'DM-Sans Bold';
+	font-family: 'DM-Sans Regular';
+	font-stretch: expanded;
 	color: white;
 	font-size: 20px;
-	line-height: 26px;
+	align-self: flex-start;
 }
 
 .item__message {
@@ -341,7 +339,9 @@ Mein
 }
 
 .item__message > span {
-	font-family: 'Montserrat Light';
+	font-family: 'DM-Sans Regular';
+	font-stretch: expanded;
+	font-weight: 400;
 	font-size: 12px;
 	line-height: 10px;
 	color: white;
@@ -349,14 +349,17 @@ Mein
 
 .item__about {
 	font-family: 'DM-Sans Regular';
+	font-stretch: expanded;
+	font-weight: 400;
 	font-size: 13px;
-	line-height: 17px;
 	width: 100%;
 	height: 30%;
 }
 
 .item__about > span {
 	color: #FFC9A5;
+	font-family: 'DM-Sans Medium';
+	font-stretch: expanded;
 	display: block;
 	white-space: nowrap;
 	overflow: hidden;
@@ -364,6 +367,8 @@ Mein
 }
 
 .item__about span span{
+	font-family: 'Montserrat';
+	font-stretch: expanded;
 	color: white;
 	white-space: nowrap;
 	overflow: hidden;
@@ -395,36 +400,43 @@ Mein
 	align-items: center;
 }
 
-.icon-300 {
-	position: relative;
-	width: 300px;
-	height: 300px;
+.workspace__product_none {
+	height: 100%;
 }
 
-@media (max-width: 800px)
-{
-	.icon-300 {
-		position: relative;
-		width: 200px;
-		height: 200px;
-	}
+.workspace__product_none .product__content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	margin-left: 0;
+}
+
+.workspace__product_none .content__text {
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.icon-300 {
+	width: 300px;
+	height: 300px;
+	border-radius: 5px;
 }
 
 .icon-300 img {
-	position: absolute;
-	background-color: wheat;
-	border-radius: 5px;
 	width: 100%;
 	height: 100%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	object-fit: cover;
+	border-radius: 5px;
 }
 
 .product__content {
 	height: 100%;
 	width: calc(100% - 315px);
 	margin-left: 15px;
+	transform: 300ms;
 }
 
 .content__text {
@@ -435,17 +447,11 @@ Mein
 }
 
 .content__text span {
-	font-family: 'Montserrat Light';
-	font-size: 18px;
-	line-height: 22px;
+	font-family: 'Montserrat';
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
 	color: white;
-}
-
-@media (max-width: 1150px) {
-	.content__text span {
-		font-size: 15px;
-			transition: 200ms;
-	}
 }
 
 .content__author {
@@ -454,20 +460,44 @@ Mein
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-end;
+	transform: 300ms;
 }
 
 .content__author a {
-	font-family: 'Montserrat Light';
-	font-size: 16px;
-	color: #FBA76F;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	font-size: 12px;
+	color: #FFC9A5;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
 	.content__author a {
 		display: block;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+}
+
+@media (max-width: 1000px) {
+
+	.workspace__product {
+		height: 200px;
+	}
+
+	.product__content {
+		height: 100%;
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.content__author {
+		align-self: flex-end;
+		justify-content: flex-end;
+	}
+
+	.icon-300 {
+		display: none;
 	}
 }
 
@@ -540,7 +570,8 @@ Mein
 }
 
 .comment_text > span {
-	font-family: 'Montserrat Regular';
+	font-family: 'Montserrat';
+	font-weight: normal;
 	font-size: 14px;
 	line-height: 22px;
 	color: #434343;
@@ -564,14 +595,22 @@ Mein
 }
 
 .comment_date > span {
-	font-family: 'Montserrat Light';
+	font-family: 'Montserrat';
+	font-weight: 400;
 	font-size: 12px;
 	line-height: 15px;
 	color: #7D7D7D;
+	text-align: center;
 }
 
 .comment_date #time {
 	margin-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+	.workspace__comments {
+		height: calc(100% - 280px); 
+	}
 }
 
 /*---------------------- Workspace Post -----------------------*/
@@ -610,7 +649,16 @@ Mein
 	background-color: #FBA76F;
 }
 
-.post__content textarea {
+.post__content form {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.post__content form textarea {
 	font-size: 14px;
 	padding: 10px;
 	width: 90%;
@@ -623,7 +671,8 @@ Mein
 }
 
 textarea::placeholder {
-	font-family: 'Montserrat Light';
+	font-family: 'Montserrat';
+	font-weight: 400;
 }
 
 @media (max-width: 740px) {
@@ -635,7 +684,7 @@ textarea::placeholder {
 	}
 }
 
-.post__content textarea::-webkit-scrollbar {
+.post__content form textarea::-webkit-scrollbar {
 	width: 0px;
 	background: transparent;
 }
@@ -644,8 +693,9 @@ textarea::placeholder {
 	margin-right: 15px;
 }
 
-.post__content .send {
+.post__content form .send {
 	margin-left: 15px;
+	background-color: transparent;
 }
 
 .icon-50 {
@@ -654,41 +704,15 @@ textarea::placeholder {
 	height: 50px;
 }
 
+/*.icon-50 a {
+	width: 100%;
+	height: 100%;
+}*/
+
 .icon-50 img,
 .icon-50 .icon {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-}
-
-
-
-/*---------------------- Scrollbar -----------------------*/
-
-.content__text::-webkit-scrollbar-track,
-.content__products ul::-webkit-scrollbar-track,
-.workspace__comments ul::-webkit-scrollbar-track {
-    background-color: transparent;
-    padding-left: 5px;
-}
-
-.content__text::-webkit-scrollbar,
-.content__products ul::-webkit-scrollbar,
-.workspace__comments ul::-webkit-scrollbar {
-    width: 2px;
-    background-color: transparent;
-}
-
-.content__text::-webkit-scrollbar-thumb,
-.content__products ul::-webkit-scrollbar-thumb,
-.workspace__comments ul::-webkit-scrollbar-thumb {
-	background-color: #C4C4C4;
-	border-radius: 5px 5px 5px 5px;
-}
-
-.content__text::-webkit-scrollbar-button,
-.content__products ul::-webkit-scrollbar-button,
-.workspace__comments ul::-webkit-scrollbar-button {
-    height: 5px;
 }

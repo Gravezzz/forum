@@ -3,7 +3,8 @@
 Create Style
 ==========================================*/
 
-@import "button.css";
+@import "./additi/button.css";
+@import "./additi/scroll.css";
 
 /*---------------------- Workspace -----------------------*/
 
@@ -63,25 +64,3 @@ Create Style
 .publish__button {}
 .button {}
 .full {}
-
-/*---------------------- Scrollbar -----------------------*/
-
-
-.workspace__create textarea::-webkit-scrollbar-track {
-    background-color: transparent;
-    padding-left: 5px;
-}
-
-.workspace__create textarea::-webkit-scrollbar {
-    width: 2px;
-    background-color: transparent;
-}
-
-.workspace__create textarea::-webkit-scrollbar-thumb {
-	background-color: #C4C4C4;
-	border-radius: 5px 5px 5px 5px;
-}
-
-.workspace__create textarea::-webkit-scrollbar-button {
-    height: 5px;
-}

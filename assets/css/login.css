@@ -3,8 +3,8 @@
 Login Style
 ==========================================*/
 
-@import "button.css";
-@import "scrollbar.css";
+@import "./additi/button.css";
+@import "./additi/scroll.css";
 
 /*---------------------- Header -----------------------*/
 

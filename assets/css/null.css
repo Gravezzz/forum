@@ -8,7 +8,7 @@ html,body{height: 100%; width: 100%; font-size: 100%; line-height: 1; font-size:
 :focus, :active{outline: none;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
-input,button,textarea{font-family: 'Montserrat';}
+input,button,textarea{font-family: 'Montserrat'; font-style: normal; font-weight: normal; }
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
 button::-moz-focus-inner {padding:0; border:0;}
