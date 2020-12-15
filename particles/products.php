@@ -41,7 +41,7 @@ $topics_num = mysqli_num_rows($result);
 				$sql_comments_num_result = mysqli_query($connect, $latest_comment);
 				$lat_com = mysqli_fetch_assoc($sql_comments_num_result);
 
-				$latest_user = "SELECT * FROM users WHERE id =" . $topic['person_id'] ." ORDER BY ID DESC LIMIT 1";
+				$latest_user = "SELECT * FROM users WHERE id =" . $lat_com['person_id'];
 				$sql_user_num_result = mysqli_query($connect, $latest_user);
 				$lat_user = mysqli_fetch_assoc($sql_user_num_result);
 
